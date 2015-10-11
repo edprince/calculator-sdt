@@ -1,4 +1,4 @@
 # calculator-sdt
 A simple web application that calculates speed, distance or time given the other inputs
 
-[demo](edprince.uk/calculator-sdt/)
+[demo](http://edprince.uk/calculator-sdt/)
