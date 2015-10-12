@@ -12,10 +12,13 @@ window.addEventListener('load', function() {
     var result;
     if ((checkUsage(speed)) && (checkUsage(distance))) {
       result = calculateTime(speed, distance);
+      shrinkElement('time');
     } else if ((checkUsage(speed)) && (checkUsage(time))) {
       result = calculateDistance(speed, time);
+      shrinkElement('distance');
     } else if ((checkUsage(distance)) && (checkUsage(time))) {
       result = calculateSpeed(distance, time);
+      shrinkElement('speed');
     } else {
       alert("Please enter two values!");
     }
@@ -45,6 +48,17 @@ function checkForText(el) {
   if (el.value) {
     return true;
   }
+}
+
+function shrinkElement(el) {
+  diameter = el.offsetWidth;
+  console.log(diameter);
+  /*
+  el.style.width = (diameter / 2) + "px";
+  el.style.height = (diameter / 2) + "px";
+  */
+  document.getElementById(el).style.width = "50px";
+  document.getElementById(el).style.height = "50px";
 }
 
 function changeColor(el, color) {
