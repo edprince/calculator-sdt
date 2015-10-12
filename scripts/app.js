@@ -23,21 +23,34 @@ window.addEventListener('load', function() {
   });
 
   speed.addEventListener('blur', function() {
-    console.log("YO");
-    changeColor('speed', 'red');
+    if (checkForText(speed)) {
+      changeColor('speed', '#BBDEFB');
+    }
   });
   distance.addEventListener('blur', function() {
-    changeColor('distance', 'yellow');
+    if (checkForText(distance)) {
+      changeColor('distance', '#64B5F6');
+    }
   });
   time.addEventListener('blur', function() {
-    changeColor('time', 'green');
+    if (checkForText(time)) {
+      changeColor('time', '#1565C0');
+    }
   });
 
 });
 
+function checkForText(el) {
+  console.log(el.value);
+  if (el.value) {
+    return true;
+  }
+}
+
 function changeColor(el, color) {
  console.log("Running changeColor function");
- document.getElementById(el).style('background-color', color); 
+ document.getElementById(el).style.background=color; 
+ document.getElementById(el).style.border=0;
 }
 
 function checkUsage(x) {
