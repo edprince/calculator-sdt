@@ -22,7 +22,23 @@ window.addEventListener('load', function() {
     button.innerText = result;
   });
 
+  speed.addEventListener('blur', function() {
+    console.log("YO");
+    changeColor('speed', 'red');
+  });
+  distance.addEventListener('blur', function() {
+    changeColor('distance', 'yellow');
+  });
+  time.addEventListener('blur', function() {
+    changeColor('time', 'green');
+  });
+
 });
+
+function changeColor(el, color) {
+ console.log("Running changeColor function");
+ document.getElementById(el).style('background-color', color); 
+}
 
 function checkUsage(x) {
   console.log("Checking usage");
